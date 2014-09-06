@@ -1,0 +1,3 @@
+[submodule "Styles"]
+	path = Styles
+	url = https://github.com/richardTowers/Responsive-Dashboard.git
