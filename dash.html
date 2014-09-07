@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" ng-app="Dashboard">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>CCNet</title>
+
+  <link rel="stylesheet" href="Styles/dist/lib/bootstrap/css/bootstrap.css"/>
+
+  <link rel="stylesheet" href="Styles/dist/lib/font-awesome/css/font-awesome.css"/>
+
+  <link rel="stylesheet" href="Styles/dist/css/dashboard/dashboard.css"/>
+
+  <!-- SCRIPTS -->
+  <script src="Styles/dist/lib/angular/angular.js"></script>
+  <script src="Styles/dist/lib/angular-cookies/angular-cookies.js"></script>
+  <script src="Styles/dist/lib/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="Styles/dist/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="Styles/dist/lib/angular-ui-router/angular-ui-router.js"></script>
+
+  <script src="Styles/dist/js/dashboard.js"></script>
+  <!-- SCRIPTS -->
+
+</head>
+<body ng-controller="MasterCtrl">
+  <div id="page-wrapper" ng-class="{'active': toggle}" ng-cloak>
+
+    <!-- Sidebar -->
+
+    <div id="sidebar-wrapper">
+      <ul class="sidebar">
+        <li class="sidebar-main">
+          <a href="#" ng-click="toggleSidebar()">
+            CCNet
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>Servers</span></li>
+        <li class="sidebar-list">
+          <a href="#">local <span class="menu-icon fa fa-cog"></span></a>
+        </li>
+        <li class="sidebar-title separator"><span>QUICK LINKS</span></li>
+        <li class="sidebar-list">
+          <a href="#">Download CCTray <span class="menu-icon fa fa-external-link"></span></a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <div class="col-xs-4">
+          <a href="https://github.com/Ehesp/Responsive-Dashboard" target="_blank">
+            Github
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="#" target="_blank">
+            About
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="#">
+            Support
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Sidebar -->
+
+    <div id="content-wrapper">
+      <div class="page-content">
+
+        <!-- Header Bar -->
+
+        <div class="row header">
+          <div class="col-xs-12">
+            <div class="user pull-right" style="margin: 10px;">
+              <div class="item">
+                <button class="btn btn-primary">Login</button>
+              </div>
+            </div>
+            <div class="meta">
+              <div class="page">
+                Cruise Control .NET
+              </div>
+              <div class="breadcrumb-links">
+                Dashboard
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End Header Bar -->
+
+        <!-- Main Content -->
+        <section data-ui-view></section>
+      </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+  </div><!-- End Page Wrapper -->
+
+  <script type="text/ng-template" id="dashboard.html">
+
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-xs-12">
+        <div class="widget">
+          <div class="widget-body">
+            <svg width="65px" height="65px" class="pull-left" style="margin-right: 15px;">
+              <path d="M 32.5 32.5 m 0, -30 a 30,30 0 1,1 -30,30" fill="none" stroke="#5cb85c" stroke-width="5"/>
+              <path d="M 32.5 32.5 m -30, 0 a 30,30 0 0,1 30,-30" fill="none" stroke="#eee" stroke-width="5"/>
+            </svg>
+            <div class="widget-content pull-left">
+              <div class="title">6 / 8</div>
+              <div class="comment">Builds Passing</div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer visible-xs"></div>
+      <div class="col-lg-9 col-md-8 col-xs-12">
+        <div class="widget">
+          <div class="widget-body">
+            <div class="widget-content pull-left" style="width: 100%">
+              <svg xmlns="http://www.w3.org/2000/svg" width="538.558" height="100.102" class="pull-right">
+                <g>
+                  <g>
+                    <path d="M537.98 5.508H.577" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M13 5.05c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05C2.898 2.26 5.158 0 7.948 0s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M57.446 5.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M133.207 5.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M212 5.05c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M324.126 5.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M510.5 5.05c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                  </g>
+                  <g>
+                    <path d="M537.98 16.758H.58" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M27.285 16.3c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M100.59 16.3c0 2.79-2.262 5.05-5.052 5.05-2.79 0-5.05-2.26-5.05-5.05s2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M71.208 16.3c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M180 16.3c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05S180 13.51 180 16.3z" fill="#5cb85c"/>
+                    <path d="M441.84 16.3c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M337.643 16.3c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#5cb85c"/>
+                  </g>
+                  <g>
+                    <path d="M537.98 28.008H.577" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M31.57 27.55c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M132.875 27.55c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M87.493 27.55c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M293.428 27.55c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M224.84 27.55c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M405.5 27.55c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                  </g>
+                  <g>
+                    <path d="M537.98 50.508H.577" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M83 50.05c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M171.017 50.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M253.412 50.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M296.983 50.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M336.27 50.05c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M386.27 50.05c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M456.983 50.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M521.983 50.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                  </g>
+                  <g>
+                    <path d="M537.98 39.258H.577" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M93 38.8c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M38.16 38.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M149.636 38.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M187.714 38.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M324.126 38.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M392.642 38.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M431.214 38.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M476.928 38.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                  </g>
+                  <g>
+                    <path d="M537.98 61.758H.577" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M13 61.3c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M57.446 61.3c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M133.207 61.3c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M212 61.3c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M324.126 61.3c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M510.5 61.3c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                  </g>
+                  <g>
+                    <path d="M537.98 73.008H.58" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M27.285 72.55c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M100.59 72.55c0 2.79-2.262 5.05-5.052 5.05-2.79 0-5.05-2.26-5.05-5.05s2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M71.208 72.55c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M180 72.55c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M441.84 72.55c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M337.643 72.55c0 2.79-2.26 5.05-5.05 5.05s-5.05-2.26-5.05-5.05 2.26-5.05 5.05-5.05 5.05 2.26 5.05 5.05z" fill="#5cb85c"/>
+                  </g>
+                  <g>
+                    <path d="M537.98 84.258H.577" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M31.57 83.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M132.875 83.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M87.493 83.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M293.428 83.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M224.84 83.8c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M405.5 83.8c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                  </g>
+                  <g>
+                    <path d="M537.98 95.508H.577" stroke="#ccc" stroke-width="1.156" fill="none"/>
+                    <path d="M93 95.05c0 2.79-2.262 5.052-5.052 5.052-2.79 0-5.05-2.262-5.05-5.05 0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M38.16 95.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#d9534f"/>
+                    <path d="M149.636 95.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M187.714 95.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M324.126 95.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M392.642 95.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M431.214 95.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                    <path d="M476.928 95.05c0 2.79-2.26 5.052-5.05 5.052s-5.05-2.262-5.05-5.05c0-2.79 2.26-5.052 5.05-5.052s5.05 2.262 5.05 5.05z" fill="#5cb85c"/>
+                  </g>
+                </g>
+              </svg>
+              <div class="title">History</div>
+              <div class="comment">Previous Builds</div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="widget">
+          <div class="widget-header">
+            <i class="fa fa-tasks"></i> Projects <small>(local)</small>
+          </div>
+          <div class="widget-body no-padding">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td class="failure"><span class="label label-success">Success</span></td>
+                    <td><a href="#0">AspSQLProvider</a></td>
+                    <td>
+                      <div>Last: <a href="#0">2014-06-12 03:33:22</a></div><div>Next: 2014-09-04 11:52:50</div></td>
+                    <td>1.3.20.0</td>
+                    <td>Running</td>
+                    <td class="sleeping">Sleeping</td>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-primary">Force</button>
+                      <button class="btn btn-warning">Stop</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="failure"><span class="label label-danger">Failure</span></td>
+                    <td><a href="#0">AspSQLProvider</a></td>
+                    <td>
+                      <div>Last: <a href="#0">2014-06-12 03:33:22</a></div><div>Next: 2014-09-04 11:52:50</div></td>
+                    <td>1.3.20.0</td>
+                    <td>Running</td>
+                    <td class="sleeping">Sleeping</td>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-primary">Force</button>
+                      <button class="btn btn-warning">Stop</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="failure"><span class="label label-success">Success</span></td>
+                    <td><a href="#0">AspSQLProvider</a></td>
+                    <td>
+                      <div>Last: <a href="#0">2014-06-12 03:33:22</a></div><div>Next: 2014-09-04 11:52:50</div></td>
+                    <td>1.3.20.0</td>
+                    <td>Running</td>
+                    <td class="sleeping">Sleeping</td>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-primary">Force</button>
+                      <button class="btn btn-warning">Stop</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="failure"><span class="label label-success">Success</span></td>
+                    <td><a href="#0">AspSQLProvider</a></td>
+                    <td>
+                      <div>Last: <a href="#0">2014-06-12 03:33:22</a></div><div>Next: 2014-09-04 11:52:50</div></td>
+                    <td>1.3.20.0</td>
+                    <td>Running</td>
+                    <td class="sleeping">Sleeping</td>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-primary">Force</button>
+                      <button class="btn btn-warning">Stop</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="failure"><span class="label label-success">Success</span></td>
+                    <td><a href="#0">AspSQLProvider</a></td>
+                    <td>
+                      <div>Last: <a href="#0">2014-06-12 03:33:22</a></div><div>Next: 2014-09-04 11:52:50</div></td>
+                    <td>1.3.20.0</td>
+                    <td>Running</td>
+                    <td class="sleeping">Sleeping</td>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-primary">Force</button>
+                      <button class="btn btn-warning">Stop</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="failure"><span class="label label-danger">Failure</span></td>
+                    <td><a href="#0">AspSQLProvider</a></td>
+                    <td>
+                      <div>Last: <a href="#0">2014-06-12 03:33:22</a></div><div>Next: 2014-09-04 11:52:50</div></td>
+                    <td>1.3.20.0</td>
+                    <td>Running</td>
+                    <td class="sleeping">Sleeping</td>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-primary">Force</button>
+                      <button class="btn btn-warning">Stop</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="failure"><span class="label label-success">Success</span></td>
+                    <td><a href="#0">AspSQLProvider</a></td>
+                    <td>
+                      <div>Last: <a href="#0">2014-06-12 03:33:22</a></div><div>Next: 2014-09-04 11:52:50</div></td>
+                    <td>1.3.20.0</td>
+                    <td>Running</td>
+                    <td class="sleeping">Sleeping</td>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-primary">Force</button>
+                      <button class="btn btn-warning">Stop</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="failure"><span class="label label-success">Success</span></td>
+                    <td><a href="#0">AspSQLProvider</a></td>
+                    <td>
+                      <div>Last: <a href="#0">2014-06-12 03:33:22</a></div><div>Next: 2014-09-04 11:52:50</div></td>
+                    <td>1.3.20.0</td>
+                    <td>Running</td>
+                    <td class="sleeping">Sleeping</td>
+                    <td></td>
+                    <td>
+                      <button class="btn btn-primary">Force</button>
+                      <button class="btn btn-warning">Stop</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Main Content -->
+  </script>
+</body>
+</html>
