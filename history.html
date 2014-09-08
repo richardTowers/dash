@@ -1,0 +1,17 @@
+<div ng-repeat="server in servers">
+	<div ng-repeat="project in server.projects" style="height: 10px;">
+		<svg xmlns="http://www.w3.org/2000/svg" ng-attr-width="{{width}}px" height="7px">
+			<g tooltip="{{project.name}}" tooltip-append-to-body="true" tooltip-placement="left">
+				<rect x="0" y="0" ng-attr-width="{{width}}" height="7" fill-opacity="0"></rect>
+				<line x1="0" y1="3.5" ng-attr-x2="{{width}}" y2="3.5" stroke="#ccc" stroke-width="1" fill="none"/>
+				<circle
+					ng-attr-cx="{{5+width*build.time}}"
+					cy="3.5"
+					r="3"
+					ng-repeat="build in project.history"
+					ng-class="{success: build.success, failure: !build.success}"
+					tooltip="{{build.date}}" tooltip-append-to-body="true"/>
+			</g>
+		</svg>
+	</div>
+</div>
